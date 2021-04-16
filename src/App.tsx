@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {Avatar, chakra, Flex, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
 import './App.css';
 import { FaMoon, FaSun } from 'react-icons/fa';
