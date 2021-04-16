@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Avatar, chakra, Flex, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
 import './App.css';
+import {encode} from 'bottomify';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import {AiOutlineMenu} from 'react-icons/ai';
 import Countdown from 'react-countdown';
 
 const Completionist = () => <Heading size="4xl">Vex is being banned!</Heading>;
 
-const renderer = ({ hours, minutes, seconds, completed }: any) => {
+const renderer = ({ hours, minutes, seconds, props, completed }: any) => {
   if (completed) {
     // Render a completed state
     return <Completionist />;
   } else {
     // Render a countdown
+    if (props.bottom) {
+      return <Heading size="4xl">{`${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
+    }
     return <Heading size="4xl">{hours}:{minutes}:{seconds}</Heading>;
   }
 };
+
+
 
 function App() {
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
   const { toggleColorMode: toggleMode } = useColorMode();
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
+  const [bottom, setBottom] = useState(false);
   const time = new Date(Date.UTC(2021, 4, 16, 0, 47, 40, 740));
   return (
     <div className="App">
@@ -37,7 +44,7 @@ function App() {
             <chakra.a
               href="/"
               title="Choc Home Page"
-              display="flex"
+              display={{base: 'none', md: "flex"}}
               alignItems="center"
             >
               <Avatar src="https://cdn.discordapp.com/icons/336642139381301249/3aa641b21acded468308a37eef43d7b3.webp?size=128" alt="Logo IDK" />
@@ -57,11 +64,19 @@ function App() {
               <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
               <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
               <Button as="a" href="https://discord.gg/dpy" variant="ghost">Discord</Button>
+              <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
             </HStack>
             <Button color={useColorModeValue('white', 'yellow.400')}
                 bg={useColorModeValue('gray.600', 'blue.400')} onClick={toggleMode}
-                leftIcon={<SwitchIcon />} size="sm">
+                leftIcon={<SwitchIcon />} size="md">
               {useColorModeValue('Dark', 'Light')}
+            </Button>
+            <Button colorScheme={bottom ? "green" : "yellow"} onClick={
+                  () => {
+                    setBottom(!bottom)
+                  }
+                } size="md">
+              {bottom ? "🤢 Human" : "🥺 Bottom"}
             </Button>
             <Box display={{ base: "inline-flex", md: "none" }}>
               <IconButton
@@ -94,7 +109,7 @@ function App() {
                   onClick={mobileNav.onClose}
                 />
                 <Button as="a" w="full" href="https://github.com/daggy1234" variant="ghost">Author</Button>
-
+                <Button as="a" w="full"  href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
               <Button as="a"   w="full" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
               <Button as="a"  w="full" href="https://discord.gg/dpy" variant="ghost">Discord</Button>
               </VStack>
@@ -103,8 +118,9 @@ function App() {
         </Flex>
       </chakra.header>
       <Box p="20%" mx="auto" alignSelf="center" textAlign="center">
-        <Countdown renderer={renderer} date={time}/>
-        <Heading>Until Vex is banned</Heading>
+        {/* @ts-ignore: Unreachable code erro */}
+        <Countdown bottom={bottom} renderer={renderer} date={time}/>
+        <Heading>{bottom ? encode('Until Vex is banned') : 'Until Vex is banned'}</Heading>
       </Box>
     </div>
   );
