@@ -47,7 +47,7 @@ function App() {
               display={{base: 'none', md: "flex"}}
               alignItems="center"
             >
-              <Avatar src="https://cdn.discordapp.com/icons/336642139381301249/3aa641b21acded468308a37eef43d7b3.webp?size=128" alt="Logo IDK" />
+              <Avatar src="https://ih1.redbubble.net/image.2307826827.0863/flat,600x600,075,f.jpg" alt="Logo IDK" />
               <VisuallyHidden>Vex-Ban-Countdown</VisuallyHidden>
             </chakra.a>
             <chakra.h1 fontSize="2xl" fontWeight="bold">
