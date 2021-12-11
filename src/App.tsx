@@ -11,7 +11,7 @@ const TITLE = "CORNELL ED DECISION TIMER"
 const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
 const UNTLL_STRING = "Untill Cornell ED decisions are out!"
 const NAME = "Cornell ED Decision Timer"
-const DATE = new Date(Date.UTC(2021, 4, 16, 0, 47, 40, 740))
+const DATE = new Date(Date.UTC(2021, 12, 14, 0, 0, 0, 0))
 const DISCORD = "https://discord.gg/BFfKxdEpgq"
 const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500x486.gif"
 
