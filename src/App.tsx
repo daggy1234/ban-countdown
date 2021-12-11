@@ -52,7 +52,7 @@ function App() {
           <Flex>
             <chakra.a
               href="/"
-              title={TITLE}"
+              title={TITLE}
               display={{base: 'none', md: "flex"}}
               alignItems="center"
             >
