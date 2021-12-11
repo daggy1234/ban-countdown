@@ -7,7 +7,7 @@ import {AiOutlineMenu} from 'react-icons/ai';
 import Countdown from 'react-countdown';
 
 
-const TITLE_STRING = "CORNELL ED DECISION TIMER"
+const TITLE = "CORNELL ED DECISION TIMER"
 const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
 const UNTLL_STRING = "Untill Cornell ED decisions are out!"
 const NAME = "Cornell ED Decision Timer"
