@@ -6,7 +6,16 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import {AiOutlineMenu} from 'react-icons/ai';
 import Countdown from 'react-countdown';
 
-const Completionist = () => <Heading size="4xl">Vex is being banned!</Heading>;
+
+const TITLE_STRING = "CORNELL ED DECISION TIMER"
+const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
+const UNTLL_STRING = "Untill Cornell ED decisions are out!"
+const NAME = "Cornell ED Decision Timer"
+const DATE = new Date(Date.UTC(2021, 4, 16, 0, 47, 40, 740))
+const DISCORD = "https://discord.gg/BFfKxdEpgq"
+const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500x486.gif"
+
+const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
 const renderer = ({ hours, minutes, seconds, props, completed }: any) => {
   if (completed) {
@@ -29,7 +38,7 @@ function App() {
   const { toggleColorMode: toggleMode } = useColorMode();
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
   const [bottom, setBottom] = useState(false);
-  const time = new Date(Date.UTC(2021, 4, 16, 0, 47, 40, 740));
+  const time = DATE;
   return (
     <div className="App">
       <chakra.header
@@ -43,15 +52,15 @@ function App() {
           <Flex>
             <chakra.a
               href="/"
-              title="Choc Home Page"
+              title={TITLE}"
               display={{base: 'none', md: "flex"}}
               alignItems="center"
             >
-              <Avatar src="https://ih1.redbubble.net/image.2307826827.0863/flat,600x600,075,f.jpg" alt="Logo IDK" />
-              <VisuallyHidden>Vex-Ban-Countdown</VisuallyHidden>
+              <Avatar src={IMAGE} alt="Logo IDK" />
+              <VisuallyHidden>{NAME}</VisuallyHidden>
             </chakra.a>
             <chakra.h1 fontSize="2xl" fontWeight="bold">
-              Vex-Ban-Countdown
+              {NAME}
             </chakra.h1>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>
@@ -111,7 +120,7 @@ function App() {
                 <Button as="a" w="full" href="https://github.com/daggy1234" variant="ghost">Author</Button>
                 <Button as="a" w="full"  href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
               <Button as="a"   w="full" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-              <Button as="a"  w="full" href="https://discord.gg/dpy" variant="ghost">Discord</Button>
+              <Button as="a"  w="full" href={DISCORD} variant="ghost">Discord</Button>
               </VStack>
             </Box>
           </HStack>
@@ -120,7 +129,7 @@ function App() {
       <Box p="20%" mx="auto" alignSelf="center" textAlign="center">
         {/* @ts-ignore: Unreachable code erro */}
         <Countdown bottom={bottom} renderer={renderer} date={time}/>
-        <Heading>{bottom ? encode('Until Vex is banned') : 'Until Vex is banned'}</Heading>
+        <Heading>{bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
       </Box>
     </div>
   );
