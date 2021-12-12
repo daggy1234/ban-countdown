@@ -69,10 +69,10 @@ function App() {
               color="brand.500"
               display={{ base: "none", md: "inline-flex" }}
             >
+              <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
               <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
               <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
               <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
-              <Button as="a" w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
             </HStack>
             <Button color={useColorModeValue('white', 'yellow.400')}
                 bg={useColorModeValue('gray.600', 'blue.400')} onClick={toggleMode}
@@ -116,17 +116,17 @@ function App() {
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
+                <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
                 <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
                 <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
                 <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-                <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
               </VStack>
             </Box>
           </HStack>
         </Flex>
       </chakra.header>
       <Flex>
-      <Box mx="auto" alignSelf="center" textAlign="center">
+      <Box p={3} mx="auto" alignSelf="center" textAlign="center">
         <Box mx="auto" boxSize='xs'>
           <Image mx="auto" src={IMAGE} alt={TITLE} />
         </Box>
