@@ -74,6 +74,7 @@ function App() {
               <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
               <Button as="a" href="https://discord.gg/dpy" variant="ghost">Discord</Button>
               <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
+              <Button as="a"   w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
             </HStack>
             <Button color={useColorModeValue('white', 'yellow.400')}
                 bg={useColorModeValue('gray.600', 'blue.400')} onClick={toggleMode}
@@ -119,21 +120,24 @@ function App() {
                 />
                 <Button as="a" w="full" href="https://github.com/daggy1234" variant="ghost">Author</Button>
                 <Button as="a" w="full"  href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
-              <Button as="a"   w="full" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-              <Button as="a"  w="full" href={DISCORD} variant="ghost">Discord</Button>
+                <Button as="a"   w="full" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
+                <Button as="a"   w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
+                <Button as="a"  w="full" href={DISCORD} variant="ghost">Discord</Button>
               </VStack>
             </Box>
           </HStack>
         </Flex>
       </chakra.header>
-      <Box p="20%" mx="auto" alignSelf="center" textAlign="center">
-        <Box boxSize='sm'>
-          <Image src={IMAGE} alt={TITLE} />
+      <Flex>
+      <Box mx="auto" alignSelf="center" textAlign="center">
+        <Box mx="auto" boxSize='xs'>
+          <Image mx="auto" src={IMAGE} alt={TITLE} />
         </Box>
         {/* @ts-ignore: Unreachable code erro */}
         <Countdown bottom={bottom} renderer={renderer} date={time}/>
         <Heading>{bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
       </Box>
+      </Flex>
     </div>
   );
 }
