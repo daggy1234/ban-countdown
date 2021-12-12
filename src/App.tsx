@@ -17,7 +17,7 @@ const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
-const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
+const renderer = ({ total, days, hours, minutes, seconds, props, completed }: any) => {
   if (completed) {
     // Render a completed state
     return <Completionist />;
@@ -26,7 +26,7 @@ const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
     if (props.bottom) {
       return <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
     }
-    return <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>;
+    return <Heading size="4xl">{total} {days} days {hours}:{minutes}:{seconds}</Heading>;
   }
 };
 
