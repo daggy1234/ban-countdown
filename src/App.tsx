@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Avatar, chakra, Flex, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
+import {Avatar, chakra, Flex, Image, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
 import './App.css';
 import {encode} from 'bottomify';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -26,7 +26,7 @@ const renderer = ({ total, days, hours, minutes, seconds, props, completed }: an
     if (props.bottom) {
       return <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
     }
-    return <Heading size="4xl">{total} {days} days {hours}:{minutes}:{seconds}</Heading>;
+    return <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>;
   }
 };
 
@@ -128,6 +128,7 @@ function App() {
       </chakra.header>
       <Box p="20%" mx="auto" alignSelf="center" textAlign="center">
         {/* @ts-ignore: Unreachable code erro */}
+        <Image src={IMAGE} alt={TITLE} />
         <Countdown bottom={bottom} renderer={renderer} date={time}/>
         <Heading>{bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
       </Box>
