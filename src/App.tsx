@@ -127,8 +127,8 @@ function App() {
         </Flex>
       </chakra.header>
       <Box p="20%" mx="auto" alignSelf="center" textAlign="center">
-        {/* @ts-ignore: Unreachable code erro */}
         <Image src={IMAGE} alt={TITLE} />
+        {/* @ts-ignore: Unreachable code erro */}
         <Countdown bottom={bottom} renderer={renderer} date={time}/>
         <Heading>{bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
       </Box>
