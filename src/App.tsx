@@ -9,15 +9,14 @@ import Countdown from 'react-countdown';
 
 const TITLE = "CORNELL ED DECISION TIMER"
 const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
-const UNTLL_STRING = "Untill Cornell ED decisions are out!"
+const UNTLL_STRING = "Until Cornell ED decisions are out!"
 const NAME = "Cornell ED Decision Timer"
 const DATE = new Date(Date.UTC(2021, 11, 14, 0, 0, 0, 0))
-const DISCORD = "https://discord.gg/BFfKxdEpgq"
 const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500x486.gif"
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
-const renderer = ({ total, days, hours, minutes, seconds, props, completed }: any) => {
+const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
   if (completed) {
     // Render a completed state
     return <Completionist />;
@@ -72,9 +71,8 @@ function App() {
             >
               <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
               <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-              <Button as="a" href="https://discord.gg/dpy" variant="ghost">Discord</Button>
               <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
-              <Button as="a"   w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
+              <Button as="a" w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
             </HStack>
             <Button color={useColorModeValue('white', 'yellow.400')}
                 bg={useColorModeValue('gray.600', 'blue.400')} onClick={toggleMode}
@@ -118,11 +116,10 @@ function App() {
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
-                <Button as="a" w="full" href="https://github.com/daggy1234" variant="ghost">Author</Button>
-                <Button as="a" w="full"  href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
-                <Button as="a"   w="full" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-                <Button as="a"   w="full" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
-                <Button as="a"  w="full" href={DISCORD} variant="ghost">Discord</Button>
+                <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
+                <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
+                <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
+                <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
               </VStack>
             </Box>
           </HStack>
