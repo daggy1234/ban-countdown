@@ -5,13 +5,13 @@ import {encode} from 'bottomify';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import {AiOutlineMenu} from 'react-icons/ai';
 import Countdown from 'react-countdown';
-
+import {Helmet} from "react-helmet";
 
 const TITLE = "CORNELL ED DECISION TIMER"
 const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
 const UNTLL_STRING = "Until Cornell ED decisions are out!"
-const NAME = "Cornell ED Decision Timer"
 const DATE = new Date(Date.UTC(2021, 11, 14, 0, 0, 0, 0))
+const DESCRIPTION = "Bottom friendly countdown for Cornell Decision";
 const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500x486.gif"
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
@@ -21,12 +21,38 @@ const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
     // Render a completed state
     return <Completionist />;
   } else {
-    // Render a countdown
-    if (props.bottom) {
-      return <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
-    }
-    return <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>;
-  }
+
+    if (seconds.toString().length <= 1) {
+      seconds = "0" + seconds.toString();
+    };
+    if (minutes.toString().length <= 1) {
+      minutes = "0" + minutes.toString();
+    };
+    
+    if (days <= 1) {
+      let newh = hours;
+      if (days === 1) {
+        newh = hours + 24;
+      }
+
+      if (newh.toString().length <= 1) {
+        newh = "0" + newh.toString();
+      };
+
+      if (props.bottom) {
+        return <Heading size="4xl">{`${encode(newh)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
+      }
+        return <Heading size="4xl">{newh}:{minutes}:{seconds}</Heading>;
+      } else {
+        if (hours.toString().length <= 1) {
+          hours = "0" + hours.toString();
+        };
+        if (props.bottom) {
+          return <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
+        }
+          return <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>;
+        }
+}
 };
 
 
@@ -39,6 +65,13 @@ function App() {
   const [bottom, setBottom] = useState(false);
   const time = DATE;
   return (
+    <>
+    <Helmet>
+      <title>{TITLE}</title>
+      <meta name="description" content={DESCRIPTION} />
+      <link rel="apple-touch-icon" href={IMAGE} />
+      <link rel="icon" href={IMAGE} />
+    </Helmet>
     <div className="App">
       <chakra.header
         bg={bg}
@@ -48,18 +81,17 @@ function App() {
         shadow="md"
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
-          <Flex>
+          <Flex alignItems="center">
             <chakra.a
               href="/"
               title={TITLE}
-              display={{base: 'none', md: "flex"}}
               alignItems="center"
             >
               <Avatar src={IMAGE} alt="Logo IDK" />
-              <VisuallyHidden>{NAME}</VisuallyHidden>
+              <VisuallyHidden>{TITLE}</VisuallyHidden>
             </chakra.a>
-            <chakra.h1 fontSize="2xl" fontWeight="bold">
-              {NAME}
+            <chakra.h1 display={{base: 'none', md: "flex"}} fontSize="2xl" fontWeight="bold">
+              {TITLE}
             </chakra.h1>
           </Flex>
           <HStack display="flex" alignItems="center" spacing={1}>
@@ -126,8 +158,11 @@ function App() {
         </Flex>
       </chakra.header>
       <Flex>
-      <Box p={3} mx="auto" alignSelf="center" textAlign="center">
-        <Box mx="auto" boxSize='xs'>
+      <Box  overflowX="scroll" p={3} mx="auto" alignSelf="center" textAlign="center">
+        <chakra.h1 mx="auto" textAlign="center" display={{base: 'flex', md: "none"}} fontSize="4xl" fontWeight="bold">
+              {TITLE}
+        </chakra.h1>
+        <Box mx="auto" boxSize="xs">
           <Image mx="auto" src={IMAGE} alt={TITLE} />
         </Box>
         {/* @ts-ignore: Unreachable code erro */}
@@ -136,6 +171,7 @@ function App() {
       </Box>
       </Flex>
     </div>
+    </>
   );
 }
 
