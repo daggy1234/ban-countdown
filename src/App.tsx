@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
+import { CreateTypes } from 'canvas-confetti';
 import {Avatar, chakra, Flex, Image, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
 import './App.css';
+
 import {encode} from 'bottomify';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import {AiOutlineMenu} from 'react-icons/ai';
 import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
+import ReactCanvasConfetti from 'react-canvas-confetti';
 
 const TITLE = "CORNELL ED DECISION TIMER"
 const DONE_STRING = "CORNELL ED DECISIONS ARE OUT!"
@@ -13,8 +16,85 @@ const UNTLL_STRING = "Until Cornell ED decisions are out!"
 const DATE = new Date(Date.UTC(2021, 11, 14, 0, 0, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for Cornell Decision";
 const IMAGE = "https://theccwh.org/wp-content/uploads/2016/11/cornell-logo-3-500x486.gif"
+const THEMEC = "red";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
+
+
+
+class Confetti extends Component {
+  private animationInstance: CreateTypes | null = null;
+
+  constructor(props: {}) {
+    super(props);
+    this.fire = this.fire.bind(this);
+  }
+
+  makeShot(particleRatio: number, opts: object) {
+    this.animationInstance && this.animationInstance({
+      ...opts,
+      origin: { y: 0.7 },
+      particleCount: Math.floor(500 * particleRatio),
+    });
+  }
+
+  fire() {
+    this.makeShot(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+
+    this.makeShot(0.2, {
+      spread: 60,
+    });
+
+    this.makeShot(0.35, {
+      spread: 100,
+      scalar: 0.8,
+    });
+
+    this.makeShot(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      scalar: 1.2,
+    });
+
+    this.makeShot(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+  }
+
+  handlerFire = () => {
+    this.fire();
+  };
+
+  getInstance = (instance: CreateTypes | null) => {
+    this.animationInstance = instance;
+  };
+
+  render() {
+    return (
+      <>
+          <Button size="lg" colorScheme={THEMEC} onClick={this.handlerFire}>Celebrate! 🎉</Button>
+         <ReactCanvasConfetti
+          refConfetti={this.getInstance}
+          style={{
+            height: '100%',
+            left: 0,
+            pointerEvents: 'none',
+            position: 'fixed',
+            top: 0,
+            width: '100%',
+            zIndex: -1
+          }}
+          className="canvas"
+        />
+        </>
+    );
+  }
+}
+
 
 const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
   if (completed) {
@@ -40,20 +120,42 @@ const renderer = ({ days, hours, minutes, seconds, props, completed }: any) => {
       };
 
       if (props.bottom) {
-        return <Heading size="4xl">{`${encode(newh)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
+        return (
+          <>
+          <Heading size="4xl">{`${encode(newh)}:${encode(minutes)}:${encode(seconds)}`}</Heading>
+          <Heading>{props.bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
+          </>
+          );
       }
-        return <Heading size="4xl">{newh}:{minutes}:{seconds}</Heading>;
+        return (
+          <>
+          <Heading size="4xl">{newh}:{minutes}:{seconds}</Heading>
+          <Heading>{props.bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
+          </>
+          );
       } else {
         if (hours.toString().length <= 1) {
           hours = "0" + hours.toString();
         };
         if (props.bottom) {
-          return <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>;
+          return (
+            <>
+            <Heading size="4xl">{`${encode(days)} ${encode('days')} ${encode(hours)}:${encode(minutes)}:${encode(seconds)}`}</Heading>
+            <Heading>{props.bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
+          </>
+          );
         }
-          return <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>;
+          return (
+            <>
+            <Heading size="4xl">{days} days {hours}:{minutes}:{seconds}</Heading>
+            <Heading>{props.bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
+          </>
+          );
         }
 }
 };
+
+
 
 
 
@@ -101,10 +203,10 @@ function App() {
               color="brand.500"
               display={{ base: "none", md: "inline-flex" }}
             >
-              <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
-              <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
-              <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
-              <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
+              <Button as="a" colorScheme={THEMEC} href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
+              <Button as="a" colorScheme={THEMEC} href="https://github.com/daggy1234" variant="ghost">Author</Button>
+              <Button as="a" colorScheme={THEMEC} href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
+              <Button as="a" colorScheme={THEMEC} href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
             </HStack>
             <Button color={useColorModeValue('white', 'yellow.400')}
                 bg={useColorModeValue('gray.600', 'blue.400')} onClick={toggleMode}
@@ -148,10 +250,10 @@ function App() {
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
-                <Button as="a" href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
-                <Button as="a" href="https://github.com/daggy1234" variant="ghost">Author</Button>
-                <Button as="a" href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
-                <Button as="a" href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
+                <Button as="a" colorScheme={THEMEC} href="https://twitter.com/daggy1234" variant="ghost">Twitter</Button>
+                <Button as="a" colorScheme={THEMEC} href="https://github.com/daggy1234" variant="ghost">Author</Button>
+                <Button as="a" colorScheme={THEMEC} href="https://understand.bottom.gg" variant="ghost">Bottom-Software</Button>
+                <Button as="a" colorScheme={THEMEC} href="https://github.com/Daggy1234/ban-countdown" variant="ghost">Source</Button>
               </VStack>
             </Box>
           </HStack>
@@ -167,7 +269,7 @@ function App() {
         </Box>
         {/* @ts-ignore: Unreachable code erro */}
         <Countdown bottom={bottom} renderer={renderer} date={time}/>
-        <Heading>{bottom ? encode(UNTLL_STRING) : UNTLL_STRING}</Heading>
+        <Confetti />
       </Box>
       </Flex>
     </div>
