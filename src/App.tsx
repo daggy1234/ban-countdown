@@ -13,7 +13,7 @@ import ReactCanvasConfetti from 'react-canvas-confetti';
 const TITLE = "MIT EA DECISION TIMER"
 const DONE_STRING = "MIT EA DECISIONS ARE OUT!"
 const UNTLL_STRING = "Until MIT Ea decisions are out!"
-const DATE = new Date(Date.UTC(2021, 11, 18, 8, 14, 0, 0))
+const DATE = new Date(Date.UTC(2021, 11, 18, 20, 14, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for MIT EA";
 const IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/321px-MIT_logo.svg.png"
 const THEMEC = "gray";
