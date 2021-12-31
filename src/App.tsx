@@ -13,7 +13,7 @@ import ReactCanvasConfetti from 'react-canvas-confetti';
 const TITLE = "2022 IST TIMER"
 const DONE_STRING = "2022!"
 const UNTLL_STRING = "Until 2022!"
-const DATE = new Date(Date.UTC(2022, 0, 1, 5, 30, 0, 0))
+const DATE = new Date(Date.UTC(2022, 0, 0, 6, 30, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for 2022";
 const IMAGE = "https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/842523/2022-clipart-md.png"
 const THEMEC = "pink";
