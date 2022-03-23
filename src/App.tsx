@@ -10,13 +10,13 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "MIT RD TIMER"
-const DONE_STRING = "MIT decisions are out"
-const UNTLL_STRING = "Untill MIT RD"
-const DATE = new Date(Date.UTC(2022, 2, 14, 22, 28, 0, 0))
-const DESCRIPTION = "Bottom friendly countdown for MIT ED";
-const IMAGE = "https://logonoid.com/images/mit-logo.png"
-const THEMEC = "gray";
+const TITLE = "UCBerkley RD TIMER"
+const DONE_STRING = "Berkley decisions are out"
+const UNTLL_STRING = "Untill UCBerkley decisions"
+const DATE = new Date(Date.UTC(2022, 2, 24, 22, 0, 0, 0))
+const DESCRIPTION = "Bottom friendly countdown for UCBerkley";
+const IMAGE = "https://library.kissclipart.com/20181215/spe/kissclipart-university-of-california-berkeley-clipart-school-edbcdfe52d136ff2.png"
+const THEMEC = "yellow";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
