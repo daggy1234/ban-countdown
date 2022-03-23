@@ -15,7 +15,7 @@ const DONE_STRING = "Berkley decisions are out"
 const UNTLL_STRING = "Untill UCBerkley decisions"
 const DATE = new Date(Date.UTC(2022, 2, 24, 22, 0, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for UCBerkley";
-const IMAGE = "https://library.kissclipart.com/20181215/spe/kissclipart-university-of-california-berkeley-clipart-school-edbcdfe52d136ff2.png"
+const IMAGE = "https://4.bp.blogspot.com/-MB6X4CjPO5g/VwUOifH9n8I/AAAAAAAAe_8/NGjY6vY9BpgsxIMhi9o95jWVqaoOPfhPg/s1600/University_of_California_Berkeley_1868.svg.png"
 const THEMEC = "yellow";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
