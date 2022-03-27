@@ -10,13 +10,14 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "Gtech RD TIMER"
-const DONE_STRING = "GTech decisions are out"
-const UNTLL_STRING = "Untill Georgia Tech decisions"
-const DATE = new Date(Date.UTC(2022, 2, 25, 23, 0, 0, 0))
+const TITLE = "Ivy Day TIMER"
+const DONE_STRING = "Ivy League decisions are out"
+const UNTLL_STRING = "Untill Ivy Day"
+const DATE = new Date(Date.UTC(2022, 2, 31, 23, 0, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for Georgia Tech";
-const IMAGE = "http://img3.wikia.nocookie.net/__cb20110509154346/nba/images/d/df/GeorgiaTechlogo.png"
-const THEMEC = "yellow";
+const IMAGE = "https://i.imgur.com/mVHPLMR.png"
+const AVATAR_IMAGE = "https://i.imgur.com/T3vQOJ1.png"
+const THEMEC = "green";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
@@ -189,7 +190,7 @@ function App() {
               title={TITLE}
               alignItems="center"
             >
-              <Avatar src={IMAGE} alt="Logo IDK" />
+              <Avatar size='xl' src={AVATAR_IMAGE} alt="Logo IDK" />
               <VisuallyHidden>{TITLE}</VisuallyHidden>
             </chakra.a>
             <chakra.h1 display={{base: 'none', md: "flex"}} fontSize="2xl" fontWeight="bold">
