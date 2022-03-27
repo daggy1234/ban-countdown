@@ -194,7 +194,7 @@ function App() {
               title={TITLE}
               alignItems="center"
             >
-              <Image borderRadius='full' boxSize='120px' objectFit='cover' mr={2} src={AVATAR_IMAGE} alt="Logo IDK" />
+              <Image borderRadius='full' boxSize='75px' objectFit='fill' mr={2} src={AVATAR_IMAGE} alt="Logo IDK" />
               <VisuallyHidden>{TITLE}</VisuallyHidden>
             </chakra.a>
             <chakra.h1 display={{base: 'none', md: "flex"}} fontSize="2xl" fontWeight="bold">
