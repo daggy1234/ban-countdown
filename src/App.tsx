@@ -1,6 +1,6 @@
 import React, { useState, Component } from 'react';
 import { CreateTypes } from 'canvas-confetti';
-import {Avatar, chakra, Flex, Image, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode} from '@chakra-ui/react';
+import { chakra, Flex, Image, Heading, VisuallyHidden, HStack, Button, IconButton, Box, VStack, useColorModeValue, useDisclosure, CloseButton, useColorMode } from '@chakra-ui/react';
 import './App.css';
 
 import {encode} from 'bottomify';
