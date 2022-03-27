@@ -172,6 +172,10 @@ function App() {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:image" content={IMAGE} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://countdown.daggy.tech" />
       <link rel="apple-touch-icon" href={IMAGE} />
       <link rel="icon" href={IMAGE} />
     </Helmet>
@@ -190,7 +194,7 @@ function App() {
               title={TITLE}
               alignItems="center"
             >
-              <Avatar size='xl' src={AVATAR_IMAGE} alt="Logo IDK" />
+              <Image borderRadius='full' boxSize='120px' objectFit='cover' mr={2} src={AVATAR_IMAGE} alt="Logo IDK" />
               <VisuallyHidden>{TITLE}</VisuallyHidden>
             </chakra.a>
             <chakra.h1 display={{base: 'none', md: "flex"}} fontSize="2xl" fontWeight="bold">
