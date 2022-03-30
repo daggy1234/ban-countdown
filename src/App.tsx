@@ -10,12 +10,12 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "Ivy Day TIMER"
-const DONE_STRING = "Ivy League decisions are out"
-const UNTLL_STRING = "Untill Ivy Day"
+const TITLE = "Ivy Day+Duke TIMER"
+const DONE_STRING = "Ivy League+Duke decisions are out"
+const UNTLL_STRING = "Untill Ivy Day+Duke"
 const DATE = new Date(Date.UTC(2022, 2, 31, 23, 0, 0, 0))
-const DESCRIPTION = "Bottom friendly countdown for Georgia Tech";
-const IMAGE = "https://i.imgur.com/mVHPLMR.png"
+const DESCRIPTION = "Bottom friendly countdown for Ivy Day+Duke";
+const IMAGE = "https://i.imgur.com/4GZNurJ.png"
 const AVATAR_IMAGE = "https://i.imgur.com/T3vQOJ1.png"
 const THEMEC = "green";
 
