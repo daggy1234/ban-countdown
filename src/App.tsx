@@ -10,14 +10,14 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "Ivy Day+Duke TIMER"
-const DONE_STRING = "Ivy League+Duke decisions are out"
-const UNTLL_STRING = "Untill Ivy Day+Duke"
-const DATE = new Date(Date.UTC(2022, 2, 31, 23, 0, 0, 0))
-const DESCRIPTION = "Bottom friendly countdown for Ivy Day+Duke";
-const IMAGE = "https://i.imgur.com/4GZNurJ.png"
-const AVATAR_IMAGE = "https://i.imgur.com/T3vQOJ1.png"
-const THEMEC = "green";
+const TITLE = "Stanford TIMER"
+const DONE_STRING = "Stanford decisions are out"
+const UNTLL_STRING = "Untill Stanford"
+const DATE = new Date(Date.UTC(2022, 3, 1, 23, 0, 0, 0))
+const DESCRIPTION = "Bottom friendly countdown for Stanford";
+const IMAGE = "https://logodownload.org/wp-content/uploads/2021/04/stanford-university-logo-2-768x251.png"
+const AVATAR_IMAGE = "https://www.pinclipart.com/picdir/big/94-949596_stanford-transparent-logo-stanford-logo-png-clipart.png"
+const THEMEC = "red";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
