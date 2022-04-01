@@ -15,7 +15,7 @@ const DONE_STRING = "Stanford decisions are out"
 const UNTLL_STRING = "Untill Stanford"
 const DATE = new Date(Date.UTC(2022, 3, 1, 23, 0, 0, 0))
 const DESCRIPTION = "Bottom friendly countdown for Stanford";
-const IMAGE = "https://logodownload.org/wp-content/uploads/2021/04/stanford-university-logo-2-768x251.png"
+const IMAGE = "https://www.pinclipart.com/picdir/big/94-949596_stanford-transparent-logo-stanford-logo-png-clipart.png"
 const AVATAR_IMAGE = "https://www.pinclipart.com/picdir/big/94-949596_stanford-transparent-logo-stanford-logo-png-clipart.png"
 const THEMEC = "red";
 
