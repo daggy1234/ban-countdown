@@ -15,7 +15,7 @@ const DONE_STRING = "Duke decisions are out"
 const UNTLL_STRING = "Untill Duke"
 const DATE = new Date(Date.UTC(2023, 2, 31, 22, 0, 0, 0));
 const DESCRIPTION = "Bottom friendly countdown for Duke";
-const IMAGE = "https://1000logos.net/wp-content/uploads/2017/11/Color-Duke-University-logo.jpg"
+const IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png";
 const AVATAR_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Athletics_logo.svg/1200px-Duke_Athletics_logo.svg.png"
 const THEMEC = "blue";
 
