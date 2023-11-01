@@ -10,10 +10,10 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "Arnav Happy TIMER"
-const DONE_STRING = "Arnav Gets to go Home"
-const UNTLL_STRING = "Untill Happiness"
-const DATE = new Date(Date.UTC(2023, 6, 29, 13, 30, 0, 0));
+const TITLE = "Thanksgiving TIMER"
+const DONE_STRING = "ITS BREAK TIME"
+const UNTLL_STRING = "Untill Break"
+const DATE = new Date(Date.UTC(2023, 10, 22, 2, 0, 0, 0));
 const DESCRIPTION = "Bottom friendly countdown for Me";
 const IMAGE = "https://static.vecteezy.com/system/resources/previews/011/968/092/original/airplane-flying-in-sky-jet-plane-fly-in-clouds-airplanes-travel-and-vacation-aircraft-flight-plane-airplane-trip-to-airport-or-airline-transportation-flat-airplane-illustration-free-vector.jpg";
 const AVATAR_IMAGE = "https://media.istockphoto.com/id/1414160809/vector/airplane-icon-plane-flight-pictogram-transport-symbol-travel.jpg?s=612x612&w=0&k=20&c=BtgJVW1RQ9a4i8sTMm-Uk-HAFI2sNbDFQVvHbPKbQA4="
