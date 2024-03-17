@@ -13,7 +13,7 @@ import ReactCanvasConfetti from 'react-canvas-confetti';
 const TITLE = "IVY DAY COUNTDOWN"
 const DONE_STRING = "Check your decisions!!!!"
 const UNTLL_STRING = "Untill Ivy Day"
-const DATE = new Date(Date.UTC(2024, 2, 28, 23, 00, 0, 0));
+const DATE = new Date(Date.UTC(2024, 2, 28, 23, 0, 0, 0));
 const DESCRIPTION = "Bottom friendly countdown";
 const IMAGE = "https://caddellprep.com/wp-content/uploads/2019/07/The-Ivy-League-Schools.jpg";
 const AVATAR_IMAGE = "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Ivy_League_logo.svg/1200px-Ivy_League_logo.svg.png"
