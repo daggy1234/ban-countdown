@@ -10,14 +10,14 @@ import Countdown from 'react-countdown';
 import {Helmet} from "react-helmet";
 import ReactCanvasConfetti from 'react-canvas-confetti';
 
-const TITLE = "GO HOME TIMER"
-const DONE_STRING = "NO MORE FALL 2023 TIME"
-const UNTLL_STRING = "Untill Break"
-const DATE = new Date(Date.UTC(2023, 11, 18, 23, 30, 0, 0));
-const DESCRIPTION = "Bottom friendly countdown for Me";
-const IMAGE = "https://static.vecteezy.com/system/resources/previews/011/968/092/original/airplane-flying-in-sky-jet-plane-fly-in-clouds-airplanes-travel-and-vacation-aircraft-flight-plane-airplane-trip-to-airport-or-airline-transportation-flat-airplane-illustration-free-vector.jpg";
-const AVATAR_IMAGE = "https://media.istockphoto.com/id/1414160809/vector/airplane-icon-plane-flight-pictogram-transport-symbol-travel.jpg?s=612x612&w=0&k=20&c=BtgJVW1RQ9a4i8sTMm-Uk-HAFI2sNbDFQVvHbPKbQA4="
-const THEMEC = "red";
+const TITLE = "IVY DAY COUNTDOWN"
+const DONE_STRING = "Check your decisions!!!!"
+const UNTLL_STRING = "Untill Ivy Day"
+const DATE = new Date(Date.UTC(2024, 02, 28, 23, 00, 0, 0));
+const DESCRIPTION = "Bottom friendly countdown";
+const IMAGE = "https://caddellprep.com/wp-content/uploads/2019/07/The-Ivy-League-Schools.jpg";
+const AVATAR_IMAGE = "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Ivy_League_logo.svg/1200px-Ivy_League_logo.svg.png"
+const THEMEC = "green";
 
 const Completionist = () => <Heading size="4xl">{DONE_STRING}</Heading>;
 
